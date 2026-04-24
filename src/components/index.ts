@@ -1,0 +1,11 @@
+export { AnimatedSection } from "./AnimatedSection";
+export { CardHover } from "./CardHover";
+export { Navbar } from "./Navbar";
+export { Hero } from "./Hero";
+export { Servicios } from "./Servicios";
+export { ComoFunciona } from "./ComoFunciona";
+export { Proyectos } from "./Proyectos";
+export { SobreNosotros } from "./SobreNosotros";
+export { Contacto } from "./Contacto";
+export { Footer } from "./Footer";
+export { Background } from "./Background";
