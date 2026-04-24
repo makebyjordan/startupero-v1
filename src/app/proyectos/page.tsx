@@ -7,11 +7,12 @@ import { useRouter } from "next/navigation";
 
 const proyectos = [
   {
-    nombre: "TechFlow",
-    descripcion: "Plataforma de automatización para empresas SaaS que revoluciona la gestión de workflows",
+    nombre: "InteligenciaSevilla",
+    descripcion: "Consultora especializada en IA para empresas.",
     metricas: "$2M ARR",
     color: "from-[#5419CB] to-[#2E0F70]",
     link: "https://ejemplo.com",
+    imagen: "https://iili.io/BqUBw6F.png",
   },
   {
     nombre: "GreenPay",
@@ -19,6 +20,7 @@ const proyectos = [
     metricas: "50K usuarios",
     color: "from-[#C4A7E3] to-[#5419CB]",
     link: "https://ejemplo.com",
+    imagen: "",
   },
   {
     nombre: "DocuSign Pro",
@@ -26,6 +28,7 @@ const proyectos = [
     metricas: "Premio 2024",
     color: "from-[#2E0F70] to-[#5419CB]",
     link: "https://ejemplo.com",
+    imagen: "",
   },
   {
     nombre: "DataMind",
@@ -33,6 +36,7 @@ const proyectos = [
     metricas: "$5M ARR",
     color: "from-[#5419CB] to-[#C4A7E3]",
     link: "https://ejemplo.com",
+    imagen: "",
   },
   {
     nombre: "CloudScale",
@@ -40,6 +44,7 @@ const proyectos = [
     metricas: "200+ empresas",
     color: "from-[#2E0F70] to-[#5419CB]",
     link: "https://ejemplo.com",
+    imagen: "",
   },
   {
     nombre: "SecureAuth",
@@ -47,6 +52,7 @@ const proyectos = [
     metricas: "1M+ usuarios",
     color: "from-[#C4A7E3] to-[#2E0F70]",
     link: "https://ejemplo.com",
+    imagen: "",
   },
 ];
 
@@ -125,8 +131,19 @@ export default function ProyectosPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#5419CB] to-[#C4A7E3] rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-all duration-500" />
                 <div className="relative glass-card rounded-3xl overflow-hidden hover:-translate-y-4 transition-all duration-500">
                   <div className={`h-56 bg-gradient-to-br ${proyecto.color} flex items-center justify-center relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-white/10 animate-shimmer" />
-                    <span className="text-6xl font-bold text-white/30 group-hover:scale-125 transition-transform duration-500">{proyecto.nombre.charAt(0)}</span>
+                    {proyecto.imagen ? (
+                      <Image
+                        src={proyecto.imagen}
+                        alt={proyecto.nombre}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-white/10 animate-shimmer" />
+                        <span className="text-6xl font-bold text-white/30 group-hover:scale-125 transition-transform duration-500">{proyecto.nombre.charAt(0)}</span>
+                      </>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0D0C12]/50 to-transparent" />
                   </div>
                   <div className="p-8">
