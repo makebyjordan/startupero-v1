@@ -3,9 +3,9 @@ import Image from "next/image";
 import { AnimatedSection } from "./AnimatedSection";
 
 const proyectos = [
-  { nombre: "InteligenciaSevilla", descripcion: "Consultora expecializada en IA para empresas.", metricas: "$2M ARR", color: "from-[#5419CB] to-[#2E0F70]", imagen: "https://iili.io/BqUBw6F.png" },
-  { nombre: "GreenPay", descripcion: "Sistema de pagos sostenibles", metricas: "50K usuarios", color: "from-[#C4A7E3] to-[#5419CB]", imagen: "" },
-  { nombre: "DocuSign Pro", descripcion: "Firma digital biométrica", metricas: "Premio 2024", color: "from-[#2E0F70] to-[#5419CB]", imagen: "" },
+  { nombre: "InteligenciaSevilla", descripcion: "Consultora expecializada en IA para empresas.", metricas: "$2M ARR", color: "from-[#5419CB] to-[#2E0F70]", imagen: "https://iili.io/BqUBw6F.png", link: "https://www.inteligenciasevilla.com/" },
+  { nombre: "GreenPay", descripcion: "Sistema de pagos sostenibles", metricas: "50K usuarios", color: "from-[#C4A7E3] to-[#5419CB]", imagen: "", link: "" },
+  { nombre: "DocuSign Pro", descripcion: "Firma digital biométrica", metricas: "Premio 2024", color: "from-[#2E0F70] to-[#5419CB]", imagen: "", link: "" },
 ];
 
 export function Proyectos() {
@@ -51,8 +51,23 @@ export function Proyectos() {
                       {proyecto.nombre}
                     </h3>
                     <p className="text-white/50 mb-4">{proyecto.descripcion}</p>
-                    <div className="inline-block bg-[#5419CB]/30 text-[#C4A7E3] px-4 py-2 rounded-full font-semibold group-hover:bg-[#C4A7E3] group-hover:text-[#0D0C12] transition-all duration-300">
-                      {proyecto.metricas}
+                    <div className="flex items-center justify-between">
+                      <div className="inline-block bg-[#5419CB]/30 text-[#C4A7E3] px-4 py-2 rounded-full font-semibold group-hover:bg-[#C4A7E3] group-hover:text-[#0D0C12] transition-all duration-300">
+                        {proyecto.metricas}
+                      </div>
+                      {proyecto.link && (
+                        <a
+                          href={proyecto.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-white/50 hover:text-[#C4A7E3] transition-colors duration-300"
+                        >
+                          Visitar
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
